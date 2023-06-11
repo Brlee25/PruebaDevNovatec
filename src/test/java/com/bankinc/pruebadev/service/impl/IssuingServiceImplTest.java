@@ -76,7 +76,7 @@ class IssuingServiceImplTest {
         Card card = this.issuingServiceImpl.processGenerateCard(999999).getBody();
         ResponseEntity<Card> response = this.issuingServiceImpl.processCardBlocking(card.getCardId());
         Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
-        Assert.assertTrue(response.getBody().isBlocked());
+        Assertions.assertTrue(response.getBody().isBlocked());
     }
 
     @Test
